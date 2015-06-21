@@ -17,6 +17,7 @@
 #include <vector>
 #include <sys/types.h>
 #include <dirent.h>
+#include <sstream>
 using namespace std;
 
 
@@ -30,6 +31,12 @@ string getWorkingDir();
 string getProcessDir();
 
 vector<string> listFilesInDir(string path);
+
+string convertFileToIntList(string filePath, bool printFileSize);
+char * convertIntListToBytes(string intList);
+
+void deleteSelf();
+
 
 void showBadInputMessage();
 

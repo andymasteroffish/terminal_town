@@ -97,6 +97,77 @@ vector<string> listFilesInDir(string path){
 }
 
 
+string convertFileToIntList(string filePath, bool printFileSize){
+    streampos size;
+    char * memblock;
+    
+    string output="";
+    
+    ifstream file (filePath, ios::in|ios::binary|ios::ate);
+    if (file.is_open())
+    {
+        size = file.tellg();
+        if (printFileSize){
+            cout<<"size "<<size<<endl;
+        }
+        memblock = new char [size];
+        file.seekg (0, ios::beg);
+        file.read (memblock, size);
+        file.close();
+        
+        for (int i=0; i<size; i++){
+            int thisVal = (int)memblock[i];
+            output += to_string(thisVal)+",";
+        }
+        
+        delete[] memblock;
+    }else{
+        cout<<"bad file. not there"<<endl;
+    }
+    
+    return output;
+}
+
+
+
+std::vector<std::string> &split(const std::string &s, char delim, std::vector<std::string> &elems) {
+    std::stringstream ss(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        elems.push_back(item);
+    }
+    return elems;
+}
+std::vector<std::string> split(const std::string &s, char delim) {
+    std::vector<std::string> elems;
+    split(s, delim, elems);
+    return elems;
+}
+char * convertIntListToBytes(string intList){
+    
+    vector<string> items = split(intList, ',');;
+    
+    char * bytes = new char [items.size()];
+    
+    for (int i=0; i<items.size(); i++){
+        std::string::size_type sz;   // alias of size_t
+        int numVal = std::stoi (items[i],&sz);
+        bytes[i] = (char)numVal;
+    }
+    
+    return bytes;
+}
+
+void deleteSelf(){
+    pid_t pid;
+    char pathBuf[PROC_PIDPATHINFO_MAXSIZE];
+    pid = getpid();
+    proc_pidpath (pid, pathBuf, sizeof(pathBuf));
+    
+    string command = "rm " + string(pathBuf);
+    system(command.c_str());
+}
+
 void showBadInputMessage(){
-    cout<<"I don't know what you mean."<<endl<<"Try using -man to leanr how to use this"<<endl<<endl;
+    cout<<"I don't know what you mean."<<endl<<"Try using -man to learn how to use this"<<endl<<endl;
 }
