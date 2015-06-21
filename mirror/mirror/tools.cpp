@@ -28,3 +28,8 @@ string getDirectoryFromFullPath(string fullPath){
     cout<<"probably a fuk up: getDirectoryFromFullPath"<<endl;
     return "";
 }
+
+
+bool pathLeadsToFile(){
+    
+}
