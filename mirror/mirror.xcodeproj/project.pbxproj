@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A7EDEF51B370208002D8F19 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A7EDEF41B370208002D8F19 /* main.cpp */; };
-		0A7EDEFD1B370314002D8F19 /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A7EDEFB1B370314002D8F19 /* tools.cpp */; };
+		0A7EDF141B37365B002D8F19 /* tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0A7EDF121B37365B002D8F19 /* tools.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +26,8 @@
 /* Begin PBXFileReference section */
 		0A7EDEF11B370208002D8F19 /* mirror */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = mirror; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A7EDEF41B370208002D8F19 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		0A7EDEFB1B370314002D8F19 /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
-		0A7EDEFC1B370314002D8F19 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
+		0A7EDF121B37365B002D8F19 /* tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tools.cpp; sourceTree = "<group>"; };
+		0A7EDF131B37365B002D8F19 /* tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tools.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +60,20 @@
 		0A7EDEF31B370208002D8F19 /* mirror */ = {
 			isa = PBXGroup;
 			children = (
+				0A7EDF111B37365B002D8F19 /* shared_tools */,
 				0A7EDEF41B370208002D8F19 /* main.cpp */,
-				0A7EDEFC1B370314002D8F19 /* tools.h */,
-				0A7EDEFB1B370314002D8F19 /* tools.cpp */,
 			);
 			path = mirror;
+			sourceTree = "<group>";
+		};
+		0A7EDF111B37365B002D8F19 /* shared_tools */ = {
+			isa = PBXGroup;
+			children = (
+				0A7EDF121B37365B002D8F19 /* tools.cpp */,
+				0A7EDF131B37365B002D8F19 /* tools.h */,
+			);
+			name = shared_tools;
+			path = ../../shared_tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A7EDEF51B370208002D8F19 /* main.cpp in Sources */,
-				0A7EDEFD1B370314002D8F19 /* tools.cpp in Sources */,
+				0A7EDF141B37365B002D8F19 /* tools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +247,7 @@
 				0A7EDEFA1B370208002D8F19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
