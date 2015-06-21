@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Andy Wallace. All rights reserved.
 //
 
+#include "tools.h"
 
 #include <stdio.h>
 #include <iostream>
@@ -17,9 +18,6 @@ char * reverse(const char * orig, int length);
 
 void readFile(string filePath);
 
-string getFileNameFromFullPath(string fullPath);
-string getDirectoryFromFullPath(string fullPath);
-
 
 int main(int argc, const char * argv[]) {
     
@@ -28,7 +26,6 @@ int main(int argc, const char * argv[]) {
     
     if (argc >= 2){
         
-        //cout<<reverse(argv[1])<<endl;
         readFile(string(argv[1]));
         
     }
@@ -102,28 +99,6 @@ char * reverse(const char * orig, int length){
     return returnVal;
     
 }
-
-
-string getFileNameFromFullPath(string fullPath){
-    for (int i=fullPath.size()-1; i>=0; i--){
-        if (fullPath[i] == '/'){
-            return fullPath.substr(i+1);
-        }
-    }
-    cout<<"probably a fuk up: getFileNameFromFullPath"<<endl;
-    return "";
-}
-
-string getDirectoryFromFullPath(string fullPath){
-    for (int i=fullPath.size()-1; i>=0; i--){
-        if (fullPath[i] == '/'){
-            return fullPath.substr(0,i+1);
-        }
-    }
-    cout<<"probably a fuk up: getDirectoryFromFullPath"<<endl;
-    return "";
-}
-
 
 
 
