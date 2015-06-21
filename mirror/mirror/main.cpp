@@ -16,24 +16,46 @@ using namespace std;
 string reverse(string orig);
 char * reverse(const char * orig, int length);
 
-void readFile(string filePath);
+void reverseFile(string filePath);
+
+void printMan();
 
 
 int main(int argc, const char * argv[]) {
     
-    //cout<<"hello "<<argc<<endl;
-    
-    
+    //if there was an argument, check if it is a file or not
     if (argc >= 2){
+        //if it is the man command, print that
+        if (string(argv[1]) == "-man"){
+            printMan();
+            return 0;
+        }
+        //if it is a file, reverse that file
+        else if (pathLeadsToFile(argv[1])){
+            reverseFile(string(argv[1]));
+        }
+        //otherwise just reverse the input text
+        else{
+            cout<<reverse(argv[1])<<endl;;
+        }
         
-        readFile(string(argv[1]));
-        
+        //and stop running the program
+        return 0;
     }
+    
+    
+    //otherwise check for input or pipe input
+    string lineInput;
+    if (getline(cin, lineInput)){
+    //if (cin >> lineInput) {
+        cout<<reverse( lineInput )<<endl;;
+    }
+    
     
     return 0;
 }
 
-void readFile(string filePath){
+void reverseFile(string filePath){
     streampos size;
     char * memblock;
     
@@ -51,7 +73,7 @@ void readFile(string filePath){
         char * reverseMem = reverse(memblock, size);
         
         //get the path
-        cout<<endl<<getFileNameFromFullPath(filePath)<<endl<<getDirectoryFromFullPath(filePath)<<endl;
+        //cout<<endl<<getFileNameFromFullPath(filePath)<<endl<<getDirectoryFromFullPath(filePath)<<endl;
         string newFilePath = getDirectoryFromFullPath(filePath) + reverse(getFileNameFromFullPath(filePath));
         
         //save that shit
@@ -100,5 +122,14 @@ char * reverse(const char * orig, int length){
     
 }
 
+
+void printMan(){
+    cout<<endl;
+    cout<<"Mirror"<<endl<<endl;
+    cout<<"A shiny hand mirror"<<endl<<endl;
+    cout<<"Usage:"<<endl;
+    cout<<"mirror [text]"<<endl<<"reverses the text"<<endl<<"accepts piped arguments"<<endl<<endl;
+    cout<<"mirror [file]"<<endl<<"reverses the given file"<<endl<<endl;
+}
 
 

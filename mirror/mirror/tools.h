@@ -18,6 +18,7 @@ using namespace std;
 string getFileNameFromFullPath(string fullPath);
 string getDirectoryFromFullPath(string fullPath);
 
-bool pathLeadsToFile();
+bool pathLeadsToFile(char * fullPath);
+bool pathLeadsToFile(string fullPath);
 
 #endif /* defined(__mirror__tools__) */

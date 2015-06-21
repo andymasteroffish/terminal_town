@@ -15,8 +15,8 @@ string getFileNameFromFullPath(string fullPath){
             return fullPath.substr(i+1);
         }
     }
-    cout<<"probably a fuk up: getFileNameFromFullPath"<<endl;
-    return "";
+    //cout<<"probably a fuk up: getFileNameFromFullPath"<<endl;
+    return fullPath;
 }
 
 string getDirectoryFromFullPath(string fullPath){
@@ -25,11 +25,21 @@ string getDirectoryFromFullPath(string fullPath){
             return fullPath.substr(0,i+1);
         }
     }
-    cout<<"probably a fuk up: getDirectoryFromFullPath"<<endl;
-    return "";
+    //cout<<"probably a fuk up: getDirectoryFromFullPath"<<endl;
+    return "./";
 }
 
+bool pathLeadsToFile(char * fullPath){
+   return pathLeadsToFile(string(fullPath));
+}
 
-bool pathLeadsToFile(){
-    
+bool pathLeadsToFile(string fullPath){
+    ifstream f(fullPath.c_str());
+    if (f.good()) {
+        f.close();
+        return true;
+    } else {
+        f.close();
+        return false;
+    }
 }
