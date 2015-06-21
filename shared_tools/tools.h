@@ -12,6 +12,11 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include <libproc.h>
+#include <unistd.h>
+#include <vector>
+#include <sys/types.h>
+#include <dirent.h>
 using namespace std;
 
 
@@ -20,5 +25,12 @@ string getDirectoryFromFullPath(string fullPath);
 
 bool pathLeadsToFile(char * fullPath);
 bool pathLeadsToFile(string fullPath);
+
+string getWorkingDir();
+string getProcessDir();
+
+vector<string> listFilesInDir(string path);
+
+void showBadInputMessage();
 
 #endif /* defined(__mirror__tools__) */
