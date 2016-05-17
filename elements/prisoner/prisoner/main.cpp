@@ -103,7 +103,7 @@ void clearCoinsFromFolder(string path, bool recursive){
 void printTalk(){
     cout<<"The Prisoner says:"<<endl;
     if (isImprisoned()){
-        cout<<"If you get me out of this PRISON, I'll give you the  hand mirror I've been trying to use to signal somebody."<<endl;
+        cout<<"If you get me out of this PRISON, I'll give you the hand mirror I've been trying to use to signal somebody."<<endl;
     }else{
         cout<<"Hey thanks! Here's the mirror; I even wrapped it up all nice for you! I'm getting of here before anybody sees me, but first I think I'm going to pay the Magnate a visit."<<endl<<endl;
         cout<<"She runs off into the woods, leaving a mirror."<<endl;

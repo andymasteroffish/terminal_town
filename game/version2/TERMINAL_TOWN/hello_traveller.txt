@@ -1,0 +1,22 @@
+Welcome to Terminal Town. In here, every executable is an object or person you can interact with. Every folder is a location. You will use terminal on your computer to explore The Town. (You can find Terminal in Applications/Utilities. It is a command line interface for your computer)
+
+Your task is to open the locked chest in the center of town.
+
+Because the files that make up The Town are just files on your computer, you are free to do anything you want with them. There is no way to cheat.
+
+Move around the town using the cd command and look at where you are with ls. To start, open your terminal window and CD into this folder. To use objects in the folder you are currently in you will have to type “./“ before their name.
+
+To learn more about an object, try calling “-man” on it. For example, once you have CDed into this folder, you can type “./chest -man” to learn more about the chest and how you can interact with it.
+
+You can move back one folder with the command “cd ..”
+
+You can explore Terminal Town strictly in your terminal window or have the folder open in Finder as well. It’s up to you. They’re all just files.
+
+It is possible to work yourself into an unwinnable state. So you may want to keep a copy of the zip you downloaded in case you want to reset the game.
+
+Good luck!
+
+-Andy
+andymakesgames.com
+@andy_makes
+(version 1.00)
